@@ -1,1 +1,80 @@
-/*Maak hier jouw CSS!*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    width: 100vw;
+    color: white;
+    font-size: 16px;
+}
+
+body {
+    background-color: bisque;
+
+}
+
+.outer-container {
+    display: grid;
+    margin: 2rem;
+    grid-template-rows: [row-a] 50px [row-b] auto repeat(5, 50px) ;
+    grid-template-columns: 100vw;
+    grid-template-areas:
+        "cell-a"
+        "cell-b"
+        "cell-c"
+        "cell-d"
+        "cell-e"
+        "."
+        "cell-f";
+    grid-gap: 1rem;
+}
+
+section {
+    padding: 1rem;
+    background-color: indianred;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.item-a {
+    grid-area: cell-a;
+}
+
+.item-b {
+    grid-area: cell-b;
+}
+
+.item-c {
+    grid-area: cell-c;
+}
+
+.item-d {
+    grid-area: cell-d;
+}
+
+.item-e {
+    grid-area: cell-e;
+}
+
+.item-f {
+    grid-area: cell-f;
+}
+
+@media screen and (min-width: 1200px) {
+
+    .outer-container {
+        grid-template-rows: [row-a] 50px [row-b] 190px [row-c] 100px [row-d] auto [row-e] 50px [last-line] ;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 1rem;
+        grid-template-areas:
+            "cell-a cell-c cell-c"
+            "cell-b cell-c cell-c"
+            "cell-b cell-e cell-d"
+            "cell-b cell-e ."
+            "cell-f cell-f cell-f";
+    }
+}
